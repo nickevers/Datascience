@@ -5,6 +5,7 @@ from itertools import islice
 
 
 wat_is_dit = "D:/Downloads/watisdit.txt"
+wat_is_dit_filtered = "../../resources/watisditfiltered.txt"
 highest = 0
 lowest = 999
 quality_score = {}
@@ -19,7 +20,7 @@ def calc_highest_lowest(_score, highest_score, lowest_score):
     return highest_score, lowest_score
 
 
-def calc_scores():
+def calc_scores(total=50000):
     with open(wat_is_dit, 'r') as file:
         i = 0
         count = 0
@@ -38,9 +39,9 @@ def calc_scores():
                 highest, lowest = calc_highest_lowest(score, highest, lowest)
                 quality_score[seq_id] = score
                 i = 0
-            count += 1
-            # Debug amount of lines to read from file
-            if count >= 8000000:
+                count += 1
+            # Debug amount of seq to read from file
+            if count >= total:
                 break
 
     print(f"Highest score is: {highest}")
