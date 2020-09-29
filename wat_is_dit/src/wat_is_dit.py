@@ -1,11 +1,8 @@
-import pandas
 import numpy as py
 import matplotlib.pyplot as plt
-from itertools import islice
 
 
 wat_is_dit = "D:/Downloads/watisdit.txt"
-wat_is_dit_filtered = "../../resources/watisditfiltered.txt"
 highest = 0
 lowest = 999
 quality_score = {}

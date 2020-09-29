@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 alcohol = []
 quality = []
 
-with open('../files/wine.csv') as csv_file:
+with open('../../resources/wine.csv') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     line_count = 0
     for row in csv_reader:
